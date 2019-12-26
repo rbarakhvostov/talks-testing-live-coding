@@ -4,10 +4,15 @@ const mockStatesData = {
   'TST2' : 'Test2',
   'TST3' : 'Test3'
 };
+
 const mockZipLookupData = { state: 'TST' };
+const mockZipLookupError = 'ERROR';
+
 const mockGetStatesFn = jest.fn().mockImplementation(() => mockStatesData);
 
-const mockZipLookupFn = jest.fn().mockImplementation(() => Promise.resolve(mockZipLookupData));
+const mockZipLookupFn = jest.fn()
+                          .mockImplementationOnce(() => Promise.resolve(mockZipLookupData))
+                          .mockImplementationOnce(() => Promise.reject(mockZipLookupError));
 
 jest.mock('./data', () => ({
   getStates: mockGetStatesFn,
@@ -51,6 +56,10 @@ describe('zipLookup', () => {
     return expect(states.zipLookup('94085')).resolves.toMatchSnapshot();
   });
 
+  it('should reject with error', () => {
+    expect.assertions(1);
+    return expect(states.zipLookup('94085')).rejects.toEqual('ERROR');
+  });
 
   it('should reject on invalid zip', () => {
     expect.assertions(1);

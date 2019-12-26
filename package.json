@@ -1,23 +1,23 @@
 {
   "name": "talks-testing-live-coding",
   "version": "1.0.0",
-  "description": "Live coding addon for Testing talk",
-  "main": "",
-  "dependencies": {},
-  "devDependencies": {
-    "jest": "^24.9.0"
-  },
+  "description": "Live coding repo for Testing talk",
+  "main": "index.js",
   "scripts": {
     "test": "jest"
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/Andre-Gl/talks-testing-live-coding.git"
+    "url": "git+https://github.com/rbarakhvostov/talks-testing-live-coding.git"
   },
   "author": "",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/Andre-Gl/talks-testing-live-coding/issues"
+    "url": "https://github.com/rbarakhvostov/talks-testing-live-coding/issues"
   },
-  "homepage": "https://github.com/Andre-Gl/talks-testing-live-coding"
+  "homepage": "https://github.com/rbarakhvostov/talks-testing-live-coding#readme",
+  "dependencies": {},
+  "devDependencies": {
+    "jest": "^24.9.0"
+  }
 }
